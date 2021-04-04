@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
+import src from "./../imgs/logo.svg";
 
 class Login extends React.Component {
     constructor() {
@@ -19,19 +20,21 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>would you rather?</h1>
+            <div className='login-page'>
+                <img src={src} alt="logo" />
+
+                <h2>choose account to login</h2>
 
                 {Object.values(this.props.users).map(user => (
                     <div className="user" key={user.id} >
-                        <img src={user.avatarURL} alt="acount" />
+                        <img className='avatar' src={user.avatarURL} alt="account avatar" />
 
                         <div>
                             <label htmlFor={user.id}>{user.name}</label>
                             <input
                                 type="radio"
                                 id={user.id}
-                                name="acount"
+                                name="account"
                                 value={this.state.value}
                                 checked={this.state.value === user.id}
                                 onChange={(e) => this.changeHandler(e)}

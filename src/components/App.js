@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser';
 import PollsContainer from './PollsContainer';
 import Login from './Login';
+import Header from './Header';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 
 class App extends React.Component {
   componentDidMount() {
@@ -17,13 +19,34 @@ class App extends React.Component {
       return <h1>loading...</h1>
 
     if (!this.props.authedUser)
-      return <Login />
+      return (
+        <Router>
+          <Redirect to="/login" />
+          <Route path='/login'>
+            <Login />
+          </Route>
+        </Router>
+      )
 
-    return (
-      <div className="App">
-        <PollsContainer />
-      </div>
-    );
+    else
+      return (
+        <Router>
+          <div className="App">
+            <Header />
+            <main>
+              <Redirect to="/" />
+              <Switch>
+                <Route exact path='/'>
+                  <PollsContainer />
+                </Route>
+                <Route path='/login'>
+                  <Login />
+                </Route>
+              </Switch>
+            </main>
+          </div>
+        </Router>
+      );
   }
 }
 
