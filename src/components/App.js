@@ -2,7 +2,6 @@ import React from 'react';
 import './../App.css';
 import handleInitialData from './../actions/shared'
 import { connect } from 'react-redux'
-import { setAuthedUser } from '../actions/authedUser';
 import PollsContainer from './PollsContainer';
 import Login from './Login';
 import Header from './Header';
@@ -10,13 +9,12 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.dispatch(setAuthedUser(null))
     this.props.dispatch(handleInitialData())
   }
 
   render() {
     if (this.props.loading)
-      return <h1>loading...</h1>
+      return <h1 style={{ height: '90vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>loading...</h1>
 
     if (!this.props.authedUser)
       return (

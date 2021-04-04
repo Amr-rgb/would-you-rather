@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Dosis', sans-serif;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+.avatar {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.login-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.login-page .logo {
+  margin-top: -8em;
+  margin-bottom: 3em;
+}
+
+.login-page h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  margin-bottom: 2em;
+}
+
+.login-page .users-container > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: .5em;
+  padding-bottom: .5em;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.login-page .users-container > div:last-of-type {
+  border: none;
+}
+
+.login-page .users-container {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login-page .users-container div img {
+  margin-right: 1em;
+}
+
+.login-page .users-container div label {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-page .users-container div input {
+  color: hotpink;
+}
+
+.login-page .users-container div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-page button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  width: 50%;
+  padding: .5em 0;
+  border: 2px solid #6B00B2;
+  color: #6B00B2;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+}
+
+.login-page button:hover {
+  color: #fff;
+  background: #6B00B2;
+}
+
+.header, main {
+  max-width: 1000px;
+  margin: auto;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.header {
+  padding: 1em 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2em;
+}
+
+.header nav {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header nav img {
+  margin-right: 3em;
+}
+
+.header nav ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  max-width: 300px;
+}
+
+.header nav ul a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #000;
+}
+
+.header nav ul a.active {
+  color: #6B00B2;
+  border-bottom: 2px solid #6B00B2;
+}
+
+.header .autheduser-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header .autheduser-info div {
+  margin-right: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: .9rem;
+  color: #6B00B2;
+}
+
+.header .autheduser-info div button {
+  width: 100%;
+  padding: .2em;
+  border-radius: 15px;
+  border: 1px solid #747474;
+  color: #747474;
+  background: #fff;
+  outline: none;
+  margin-top: .2em;
+  cursor: pointer;
+}
+
+.polls-container .btns {
+  margin-bottom: 2em;
+}
+
+.polls-container button {
+  padding: .8em 4em;
+  font-weight: 600;
+  background: #6B00B2;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.polls-container button:disabled {
+  background: #F2F2F2;
+  color: #6E6E6E;
+  cursor: not-allowed;
+}
+
+.polls-container .poll-container {
+  border: 1px solid #6E6E6E;
+  width: 425px;
+  position: relative;
+  margin-bottom: 2em;
+}
+
+.polls-container .poll-container .author-info {
+  width: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+}
+
+.polls-container .poll-container .author-info img {
+  border-radius: 0;
+  margin-right: .7em;
+  border: 1px solid #6E6E6E;
+}
+
+.polls-container .poll-container .poll-content {
+  margin-top: 4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.polls-container .poll-container .poll-content .poll-content-text {
+  margin-left: 3em;
+}
+
+.polls-container .poll-container .poll-content p:first-of-type {
+  font-size: .9rem;
+  color: #6E6E6E;
+  margin-bottom: .2em;
+}
+
+.polls-container .poll-container .poll-content button {
+  margin-top: 1em;
+}
+/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;
+    min-height: 100vh;
+}
+img {
+    max-width: 100%;
+}
+
+.avatar {
+    width: 50px;
+    border-radius: 50%;
+}
+
+// login page
+
+.login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .logo {
+        margin-top: -8em;
+        margin-bottom: 3em;
+    }
+
+    h2 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        margin-bottom: 2em;
+    }
+
+    .users-container > div {
+        display: flex;
+        align-items: center;
+        margin-bottom: .5em;
+        padding-bottom: .5em;
+        border-bottom: 1px solid #dfdfdf;
+
+        &:last-of-type {
+            border: none
+        }
+    }
+
+    .users-container {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+
+        div {
+
+            img {
+                margin-right: 1em;
+            }
+
+            label {
+                font-weight: 600;
+                cursor: pointer;
+            }
+            input {
+                color: hotpink;
+            }
+            
+            div {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+        }
+    }
+
+    button {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        width: 50%;
+        padding: .5em 0;
+        border: 2px solid #6B00B2;
+        color: #6B00B2;
+        background: #fff;
+        outline: none;
+        cursor: pointer;
+
+        &:hover {
+            color: #fff;
+            background: #6B00B2;
+        }
+    }
+}
+
+// header
+
+.header, main {
+    max-width: 1000px;
+    margin: auto;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.header {
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+    
+    nav {
+        width: 70%;
+        display: flex;
+        
+        img {
+            margin-right: 3em;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            max-width: 300px;
+
+            a {
+                text-decoration: none;
+                font-weight: 600;
+                color: #000;
+            }
+
+            a.active {
+                color: #6B00B2;
+                border-bottom: 2px solid #6B00B2;
+            }
+        }
+    }
+
+    .autheduser-info {
+        display: flex;
+        justify-content: center;
+
+        div {
+            margin-right: 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Open Sans', sans-serif;
+            font-size: .9rem;
+            color: #6B00B2;
+
+            button {
+                width: 100%;
+                padding: .2em;
+                border-radius: 15px;
+                border: 1px solid #747474;
+                color: #747474;
+                background: #fff;
+                outline: none;
+                margin-top: .2em;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// home page
+
+.polls-container {
+
+    .btns {
+        margin-bottom: 2em;
+    }
+
+    button {
+        padding: .8em 4em;
+        font-weight: 600;
+        background: #6B00B2;
+        color: #fff;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        &:disabled {
+            background: #F2F2F2;
+            color: #6E6E6E;
+            cursor: not-allowed;
+        }
+    }
+
+    .poll-container {
+        border: 1px solid #6E6E6E;
+        width: 425px;
+        position: relative;
+        margin-bottom: 2em;
+
+        .author-info {
+            width: 100%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+
+            img {
+                border-radius: 0;
+                margin-right: .7em;
+                border: 1px solid #6E6E6E;
+            }
+        }
+
+        .poll-content {
+            margin-top: 4em;
+            display: flex;
+            flex-direction: column;
+
+            .poll-content-text {
+                margin-left: 3em;
+            }
+
+            p:first-of-type {
+                font-size: .9rem;
+                color: #6E6E6E;
+                margin-bottom: .2em;
+            }
+
+            button {
+                margin-top: 1em;
+            }
+        }
+    }
+}
