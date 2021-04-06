@@ -1,11 +1,13 @@
 import React from 'react';
 import './../App.css';
-import handleInitialData from './../actions/shared'
+import { handleInitialData } from './../actions/shared'
 import { connect } from 'react-redux'
 import PollsContainer from './PollsContainer';
 import Login from './Login';
 import Header from './Header';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { Router, Route, Switch, Redirect } from 'react-router-dom'
+import PollVotation from './PollVotation';
+import history from './../history'
 
 class App extends React.Component {
   componentDidMount() {
@@ -18,7 +20,7 @@ class App extends React.Component {
 
     if (!this.props.authedUser)
       return (
-        <Router>
+        <Router history={history}>
           <Redirect to="/login" />
           <Route path='/login'>
             <Login />
@@ -28,7 +30,7 @@ class App extends React.Component {
 
     else
       return (
-        <Router>
+        <Router history={history}>
           <div className="App">
             <Header />
             <main>
@@ -36,6 +38,9 @@ class App extends React.Component {
               <Switch>
                 <Route exact path='/'>
                   <PollsContainer />
+                </Route>
+                <Route path='/poll/:id'>
+                  <PollVotation />
                 </Route>
                 <Route path='/login'>
                   <Login />

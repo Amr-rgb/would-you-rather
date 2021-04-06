@@ -40,9 +40,11 @@ function PollsContainer({ questions, users, authedUser }) {
                 return (
                     <Poll
                         key={question.id}
+                        id={question.id}
                         author={userInfo.name}
                         imgSrc={userInfo.avatarURL}
-                        optOne={question.optionOne.text}
+                        optOne={question.optionOne}
+                        optTwo={question.optionTwo}
                         btn='vote'
                     />
                 )
@@ -53,9 +55,11 @@ function PollsContainer({ questions, users, authedUser }) {
                 return (
                     <Poll
                         key={question.id}
+                        id={question.id}
                         author={userInfo.name}
                         imgSrc={userInfo.avatarURL}
-                        optOne={question.optionOne.text}
+                        optOne={question.optionOne}
+                        optTwo={question.optionTwo}
                         btn='See Details'
                     />
                 )

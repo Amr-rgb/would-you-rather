@@ -10,7 +10,7 @@ export function initialData(users, questions) {
     }
 }
 
-export default function handleInitialData() {
+export function handleInitialData() {
     return (dispatch) => {
         Promise.all([
             _getUsers(), _getQuestions()

@@ -205,6 +205,7 @@ img {
 }
 
 .header .autheduser-info div button {
+  font-weight: 400;
   width: 100%;
   padding: .2em;
   border-radius: 15px;
@@ -218,9 +219,23 @@ img {
 
 .polls-container .btns {
   margin-bottom: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  min-width: 350px;
 }
 
-.polls-container button {
+.polls-container .poll-container {
+  border: 1px solid #6E6E6E;
+  width: 50%;
+  min-width: 350px;
+  position: relative;
+  margin-bottom: 2em;
+}
+
+button {
+  width: 50%;
   padding: .8em 4em;
   font-weight: 600;
   background: #6B00B2;
@@ -230,21 +245,13 @@ img {
   cursor: pointer;
 }
 
-.polls-container button:disabled {
+button:disabled {
   background: #F2F2F2;
   color: #6E6E6E;
   cursor: not-allowed;
 }
 
-.polls-container .poll-container {
-  border: 1px solid #6E6E6E;
-  width: 425px;
-  position: relative;
-  margin-bottom: 2em;
-}
-
-.polls-container .poll-container .author-info {
-  width: 100%;
+.author-info {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -255,14 +262,13 @@ img {
   font-weight: 600;
 }
 
-.polls-container .poll-container .author-info img {
+.author-info img {
   border-radius: 0;
   margin-right: .7em;
   border: 1px solid #6E6E6E;
 }
 
-.polls-container .poll-container .poll-content {
-  margin-top: 4em;
+.poll-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -272,17 +278,53 @@ img {
           flex-direction: column;
 }
 
-.polls-container .poll-container .poll-content .poll-content-text {
+.poll-content .poll-content-text {
   margin-left: 3em;
+  margin-top: 4em;
 }
 
-.polls-container .poll-container .poll-content p:first-of-type {
+.poll-content p:first-of-type {
   font-size: .9rem;
   color: #6E6E6E;
   margin-bottom: .2em;
 }
 
-.polls-container .poll-container .poll-content button {
+.poll-content button {
   margin-top: 1em;
+  width: 100%;
+}
+
+.poll-votation {
+  width: 70%;
+  margin: auto;
+  border: 1px solid #6B00B2;
+}
+
+.poll-votation .poll-content-text p:first-of-type {
+  margin-bottom: 1.3em;
+}
+
+.poll-votation .poll-content-text span {
+  display: inline-block;
+  color: #959595;
+  margin: .5em 0;
+}
+
+.poll-votation .poll-content-text .input-field {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.poll-votation .poll-content-text .input-field label {
+  font-weight: 600;
+  cursor: pointer;
 }
 /*# sourceMappingURL=App.css.map */

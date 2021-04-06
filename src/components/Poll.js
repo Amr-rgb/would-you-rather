@@ -1,6 +1,6 @@
-import { connect } from "react-redux"
+import { Link } from "react-router-dom";
 
-function Poll({ author, imgSrc, optOne, btn }) {
+export default function Poll({ id, author, imgSrc, optOne, btn }) {
 
     return (
         <div className="poll-container">
@@ -12,12 +12,10 @@ function Poll({ author, imgSrc, optOne, btn }) {
             <div className="poll-content">
                 <div className="poll-content-text">
                     <p>would you rather:</p>
-                    <p>{optOne} OR...</p>
+                    <p>{optOne.text} OR...</p>
                 </div>
-                <button>{btn}</button>
+                <button><Link to={`/poll/${id}`}>{btn}</Link></button>
             </div>
         </div>
     )
 }
-
-export default connect()(Poll)
