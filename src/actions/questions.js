@@ -24,7 +24,7 @@ export function handleSetAnswer(obj) {
         _saveQuestionAnswer(obj)
             .then(_ => dispatch(setQuestionAnswer(obj)))
             .then(_ => {
-                history.push('/')
+                history.push(`/poll/${obj.qid}`)
             })
     }
 }

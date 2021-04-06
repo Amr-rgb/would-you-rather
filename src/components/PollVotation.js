@@ -3,12 +3,16 @@ import { useState } from 'react'
 import { connect } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { handleSetAnswer } from '../actions/questions'
+import PollDetails from './PollDetails'
 
 function PollVotation({ authedUser, author, avatar, questions, dispatch }) {
+    const [value, setValue] = useState('optionOne')
     const { id } = useParams()
     const question = questions[id]
 
-    const [value, setValue] = useState('optionOne')
+    if (question.optionOne.votes.includes(authedUser) || question.optionTwo.votes.includes(authedUser)) {
+        return <PollDetails />
+    }
 
     const changeHandler = (e) => {
         setValue(e.target.value)
@@ -63,7 +67,7 @@ export default connect(state => {
     const authedUser = state.users[state.authedUser]
     return {
         authedUser: state.authedUser,
-        authur: authedUser.name,
+        author: authedUser.name,
         avatar: authedUser.avatarURL,
         questions: state.questions,
     }

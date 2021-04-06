@@ -14,8 +14,8 @@ export default function Poll({ id, author, imgSrc, optOne, btn }) {
                     <p>would you rather:</p>
                     <p>{optOne.text} OR...</p>
                 </div>
-                <button><Link to={`/poll/${id}`}>{btn}</Link></button>
+                <Link to={`/poll/${id}`}><button>{btn}</button></Link>
             </div>
-        </div>
+        </div >
     )
 }
