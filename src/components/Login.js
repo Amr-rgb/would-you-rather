@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { setAuthedUser } from '../actions/authedUser'
+import { handleSetAuthedUser } from '../actions/authedUser'
 import src from "./../imgs/logo.svg";
 
 class Login extends React.Component {
@@ -15,7 +15,7 @@ class Login extends React.Component {
     }
 
     submitHandler = () => {
-        this.props.dispatch(setAuthedUser(this.state.value))
+        this.props.dispatch(handleSetAuthedUser(this.state.value))
     }
 
     render() {

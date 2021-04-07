@@ -8,6 +8,7 @@ import Header from './Header';
 import { Router, Route, Switch, Redirect } from 'react-router-dom'
 import PollVotation from './PollVotation';
 import history from './../history'
+import NewQuestion from './NewQuestion';
 
 class App extends React.Component {
   componentDidMount() {
@@ -34,10 +35,12 @@ class App extends React.Component {
           <div className="App">
             <Header />
             <main>
-              <Redirect to="/" />
               <Switch>
                 <Route exact path='/'>
                   <PollsContainer />
+                </Route>
+                <Route path='/add'>
+                  <NewQuestion />
                 </Route>
                 <Route path='/poll/:id'>
                   <PollVotation />
