@@ -1,14 +1,18 @@
 import React from 'react'
 import { useState } from 'react'
 import { connect } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { Redirect, useParams } from 'react-router-dom'
 import { handleSetAnswer } from '../actions/questions'
 import PollDetails from './PollDetails'
 
 function PollVotation({ authedUser, author, avatar, questions, dispatch }) {
+
     const [value, setValue] = useState('optionOne')
     const { id } = useParams()
     const question = questions[id]
+
+    if (!Object.keys(questions).includes(id))
+        return <Redirect to='/notfound' />
 
     if (question.optionOne.votes.includes(authedUser) || question.optionTwo.votes.includes(authedUser)) {
         return <PollDetails />

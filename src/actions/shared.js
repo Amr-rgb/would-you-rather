@@ -2,7 +2,7 @@ import { _getUsers, _getQuestions } from './../_DATA'
 
 export const INITIAL_DATA = 'INITIAL_DATA'
 
-export function initialData(users, questions) {
+function initialData(users, questions) {
     return {
         type: INITIAL_DATA,
         users,

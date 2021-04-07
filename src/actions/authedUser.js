@@ -16,11 +16,11 @@ export function removeAuthedUser() {
     }
 }
 
-export function handleSetAuthedUser(id) {
+export function handleSetAuthedUser(id, path) {
     return (dispatch) => {
         (async () => {
             await dispatch(setAuthedUser(id))
-            history.push('/')
+            history.push(path === '/login' ? '/' : path)
         })()
     }
 }

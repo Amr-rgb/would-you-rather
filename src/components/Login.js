@@ -15,7 +15,7 @@ class Login extends React.Component {
     }
 
     submitHandler = () => {
-        this.props.dispatch(handleSetAuthedUser(this.state.value))
+        this.props.dispatch(handleSetAuthedUser(this.state.value, this.props.path))
     }
 
     render() {

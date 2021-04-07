@@ -5,7 +5,7 @@ import { useState } from "react";
 import { removeAuthedUser } from './../actions/authedUser'
 
 function Header(props) {
-    const [active, setValue] = useState('/')
+    const [active, setValue] = useState(props.path)
 
     const clickHandler = (e) => {
         setValue(e.target.attributes.href.value)

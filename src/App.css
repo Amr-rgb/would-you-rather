@@ -226,6 +226,11 @@ img {
   min-width: 350px;
 }
 
+.polls-container button {
+  background: #F2F2F2;
+  color: #6E6E6E;
+}
+
 .polls-container .poll-container {
   border: 1px solid #6E6E6E;
   width: 50%;
@@ -238,17 +243,14 @@ button {
   width: 50%;
   padding: .8em 4em;
   font-weight: 600;
-  background: #6B00B2;
-  color: #fff;
   border: none;
   outline: none;
   cursor: pointer;
 }
 
 button:disabled {
-  background: #F2F2F2;
-  color: #6E6E6E;
-  cursor: not-allowed;
+  background: #6B00B2;
+  color: #fff;
 }
 
 button a {
@@ -297,6 +299,8 @@ button a {
 .poll-content button {
   margin-top: 1em;
   width: 100%;
+  background: #6B00B2;
+  color: #fff;
 }
 
 label {
@@ -452,5 +456,75 @@ label {
 .new-question button:hover {
   background: #6B00B2;
   color: #fff;
+}
+
+.leaderboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.leaderboard .user {
+  margin-bottom: 1.5em;
+  border: 2px solid #6B00B2;
+  width: 50%;
+  min-width: 350px;
+}
+
+.leaderboard .user-content {
+  margin-top: 4em;
+  margin-left: 3.5em;
+  margin-bottom: 1.5em;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.leaderboard .left p:first-of-type {
+  margin-bottom: .5em;
+}
+
+.leaderboard .right {
+  text-align: center;
+  border: 2px solid #cecece;
+  padding: 1em;
+  font-weight: 600;
+}
+
+.not-found {
+  margin-top: 6em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.not-found h1 {
+  font-size: 3rem;
+  margin-bottom: .5em;
+}
+
+.not-found p {
+  font-size: 1.5rem;
 }
 /*# sourceMappingURL=App.css.map */

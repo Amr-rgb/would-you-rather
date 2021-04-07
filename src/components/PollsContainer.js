@@ -3,9 +3,16 @@ import { connect } from 'react-redux'
 import Poll from './Poll'
 
 function PollsContainer({ questions, users, authedUser }) {
+
+    const orderedQuestions = [...Object.values(questions)]
+
+    //from stackoverflpw
+    orderedQuestions.sort((a, b) => a.timestamp - b.timestamp)
+    orderedQuestions.reverse()
+
     const unansweredQues = []
     const answeredQues = []
-    Object.values(questions).forEach(question => {
+    Object.values(orderedQuestions).forEach(question => {
         if (question.optionOne.votes.includes(authedUser) || question.optionTwo.votes.includes(authedUser)) {
             answeredQues.push(question)
         } else {

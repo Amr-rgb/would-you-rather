@@ -9,6 +9,8 @@ import { Router, Route, Switch, Redirect } from 'react-router-dom'
 import PollVotation from './PollVotation';
 import history from './../history'
 import NewQuestion from './NewQuestion';
+import Leaderboard from './Leaderboard';
+import NotFound from './NotFound';
 
 class App extends React.Component {
   componentDidMount() {
@@ -16,6 +18,8 @@ class App extends React.Component {
   }
 
   render() {
+    const path = window.location.pathname
+
     if (this.props.loading)
       return <h1 style={{ height: '90vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>loading...</h1>
 
@@ -24,7 +28,7 @@ class App extends React.Component {
         <Router history={history}>
           <Redirect to="/login" />
           <Route path='/login'>
-            <Login />
+            <Login path={path} />
           </Route>
         </Router>
       )
@@ -33,7 +37,7 @@ class App extends React.Component {
       return (
         <Router history={history}>
           <div className="App">
-            <Header />
+            <Header path={path} />
             <main>
               <Switch>
                 <Route exact path='/'>
@@ -42,12 +46,19 @@ class App extends React.Component {
                 <Route path='/add'>
                   <NewQuestion />
                 </Route>
-                <Route path='/poll/:id'>
+                <Route path='/leaderboard'>
+                  <Leaderboard />
+                </Route>
+                <Route path='/questions/:id'>
                   <PollVotation />
                 </Route>
                 <Route path='/login'>
                   <Login />
                 </Route>
+                <Route path='/notfound'>
+                  <NotFound />
+                </Route>
+                <Redirect from='*' to='/notfound' />
               </Switch>
             </main>
           </div>
